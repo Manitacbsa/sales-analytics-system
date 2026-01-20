@@ -7,3 +7,6 @@ env/
 venv/
 # Generated output files
 output/
+# Generated runtime files
+output/
+data/enriched_sales_data.txt
