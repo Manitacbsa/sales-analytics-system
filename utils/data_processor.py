@@ -111,6 +111,7 @@ def validate_and_filter(transactions, region=None, min_amount=None, max_amount=N
     }
 
     return valid_transactions, invalid_count, summary
+    print(f"✓ Valid: {len(valid_transactions)} | Invalid: {len(invalid_transactions)}")
 
 
 # =========================================================
