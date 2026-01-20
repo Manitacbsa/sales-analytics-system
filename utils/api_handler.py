@@ -89,6 +89,12 @@ def enrich_sales_data(transactions, product_mapping):
         enriched_transactions.append(enriched_tx)
 
     save_enriched_data(enriched_transactions)
+    matched = sum(1 for tx in enriched_transactions if tx.get("API_Match"))
+    total = len(enriched_transactions)
+    percentage = (matched / total * 100) if total else 0
+
+    print(f"✓ Enriched {matched}/{total} transactions ({percentage:.1f}%)")
+
     return enriched_transactions
 
 
