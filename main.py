@@ -1,3 +1,7 @@
+"""
+Main entry point for the Sales Analytics System.
+Orchestrates data loading, validation, enrichment, and reporting.
+"""
 from utils.file_handler import read_sales_data
 from utils.data_processor import (
     parse_transactions,
