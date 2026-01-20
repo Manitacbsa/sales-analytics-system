@@ -42,8 +42,10 @@ def parse_transactions(raw_lines):
 
 def validate_and_filter(transactions, region=None, min_amount=None, max_amount=None):
     """
-    Validates transactions and applies optional filters
+    Validates transactions and applies optional filters.
+    Returns valid transactions, invalid count, and summary.
     """
+
     valid_transactions = []
     invalid_count = 0
     total_input = len(transactions)
