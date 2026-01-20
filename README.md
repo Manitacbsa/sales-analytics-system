@@ -152,3 +152,12 @@ Make data-driven sales decisions
 🏁 Conclusion
 
 This project demonstrates a complete Python-based data analytics pipeline, combining real-world data cleaning, API enrichment, analytical insights, and professional reporting.
+
+## Sample Run Output
+
+When executed successfully, the program:
+- Reads and validates sales data
+- Enriches transactions using external API
+- Generates enriched_sales_data.txt
+- Generates sales_report.txt
+- Prints a step-by-step execution summary
