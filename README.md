@@ -39,6 +39,15 @@ sales-analytics-system/
 └── output/
     └── sales_report.txt
 
+⚠️ Note on Generated Files
+
+The following files are created automatically when the program runs and are not committed to the GitHub repository:
+
+- `data/enriched_sales_data.txt`
+- `output/sales_report.txt`
+
+These files are intentionally excluded using `.gitignore` and will be generated during execution.
+
 🧩 Features Implemented
 ✅ Part 1: Data File Handling & Preprocessing
 
@@ -123,6 +132,8 @@ requirements.txt
 requests
 
 ▶️ How to Run the Project
+The program will prompt the user for optional filters such as region and transaction amount during execution.
+
 1️⃣ Clone the repository
 git clone https://github.com/<Manitacbsa>/sales-analytics-system.git
 cd sales-analytics-system
