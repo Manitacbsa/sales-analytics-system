@@ -52,7 +52,6 @@ def create_product_mapping(api_products):
             }
 
     return product_mapping
-
 def enrich_sales_data(transactions, product_mapping):
     """
     Enriches transaction data with API product information
@@ -64,7 +63,9 @@ def enrich_sales_data(transactions, product_mapping):
 
         try:
             # Extract numeric ID from ProductID (P101 -> 101)
-            numeric_id = int("".join(filter(str.isdigit, tx["ProductID"])))
+            numeric_id = int("".join(filter(str.isdigit, tx["ProductID"]))) % 100
+            if numeric_id == 0:
+                numeric_id = 100
 
             if numeric_id in product_mapping:
                 api_data = product_mapping[numeric_id]
@@ -87,10 +88,9 @@ def enrich_sales_data(transactions, product_mapping):
 
         enriched_transactions.append(enriched_tx)
 
-    # Save enriched data to file
     save_enriched_data(enriched_transactions)
-
     return enriched_transactions
+
 
 def save_enriched_data(enriched_transactions, filename="data/enriched_sales_data.txt"):
     """
